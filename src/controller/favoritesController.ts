@@ -1,25 +1,29 @@
 import { Request, Response } from "express";
-import { favoritesRepository } from "../repositories/favoritesRepository";
 
-export class favoritesController {
-    //criar favoritos
-    async create(req: Request, res: Response) {
+import { FavoriteService } from "../services/favoriteService";
 
-        const { git_id } = req.body
-        if (!git_id) {
-            return res.status(400).json({ message: 'O id do Git é Obrigatório' })
-        }
+export class FavoriteController {
+
+    public async favoriteGitRepository(req: Request, res: Response): Promise<any> {
+        const param = req.params
+        const idGitRepository = param.id
+        const ip = req.ip
         try {
-            //const newfavorites = favoritesRepository.create({ ip })
-
-            //await favoritesRepository.save(newfavorites)
-
-            //return res.status(201).json(newfavorites)
-
-
+            const message = await new FavoriteService().favoriteGitRepository(+idGitRepository, ip)
+            return res.send(message)
         } catch (error) {
             console.log(error);
-            return res.status(500).json({ message: 'Internal Server Error' })
+        }
+    }
+
+
+    public async getFavoriteRepositories(req: Request, res: Response): Promise<any> {
+        const ip = req.ip
+        try {
+            const repositories = await new FavoriteService().getFavoriteRepositories(ip)
+            return res.send(repositories)
+        } catch (error) {
+            console.log(error);
         }
     }
 }

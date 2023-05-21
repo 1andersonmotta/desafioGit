@@ -1,5 +1,5 @@
 import { AppDataSource } from "../data-source";
-import { favorites } from "../entities/favorites";
+import { FavoriteRepositoryEntity } from "../entities/favoriteRepositoryEntity";
 
-export const favoritesRepository = AppDataSource.getRepository(favorites)
+export const favoritesRepository = AppDataSource.getRepository(FavoriteRepositoryEntity)
 

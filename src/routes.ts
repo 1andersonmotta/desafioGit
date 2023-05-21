@@ -1,13 +1,15 @@
+import { FavoriteController } from './controller/favoritesController';
+import { GitHubController } from './controller/gitHubController';
 import { Router } from 'express'
-import { favoritesController } from './controller/favoritesController'
-import { gitController } from './controller/gitController'
 
 const routes = Router()
 
-routes.post('/favorites', new favoritesController().create)
-routes.post('/git', new gitController().create)
-routes.get('/getTopFive', new gitController().getTop5)
-routes.get('/getAll', new gitController().getAll)
+routes.post('/repositories/load', new GitHubController().loadGithubRepositories)
+routes.get('/repositories/', new GitHubController().getAll)
+routes.get('/repositories/details/:id', new GitHubController().getRepositoryDetails)
+routes.post('/repositories/favorite/:id', new FavoriteController().favoriteGitRepository)
+routes.get('/repositories/favorite/', new FavoriteController().getFavoriteRepositories)
+
 
 
 export default routes

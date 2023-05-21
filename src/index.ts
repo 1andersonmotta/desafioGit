@@ -4,8 +4,6 @@ import routes from './routes'
 
 AppDataSource.initialize().then(() => {
     const app = express()
-
-
     app.use(express.json())
     app.use(routes)
 

@@ -20,7 +20,8 @@
     "strictPropertyInitialization": false
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "src/controller/gitHubController.ts"
   ],
   "exclude": [
     "node_modules",
