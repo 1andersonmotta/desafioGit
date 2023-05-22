@@ -6,7 +6,7 @@ AppDataSource.initialize().then(() => {
     const app = express()
     app.use(express.json())
     app.use(routes)
-    const port = process.env.PORT
+    const port = process.env.PORT || 3000
     console.log(`http://localhost:${port}`);
 
     return app.listen(port)
