@@ -1,6 +1,7 @@
 ## How to run
  
-1. Run command for create database postgres: docker-compose up  
+1. Run command yarn install
+2. Run command for create database postgres: docker-compose up  
 
 ----
 
