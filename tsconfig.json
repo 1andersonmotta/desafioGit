@@ -21,7 +21,8 @@
   },
   "include": [
     "src/**/*",
-    "src/controller/gitHubController.ts"
+    "src/controller/gitHubController.ts",
+    "src/index.test.ts"
   ],
   "exclude": [
     "node_modules",
