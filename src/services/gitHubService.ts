@@ -34,7 +34,7 @@ export class GitHubService {
         return repositories
     }
 
-    private formatObj(resposta: any): GitRepositoryDto[] {
+    public formatObj(resposta: any): GitRepositoryDto[] {
         let repositorios = resposta.data.items.slice(0, 3);
         let retorno: GitRepositoryDto[] = []
         for (let i of repositorios) {
