@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "yarn jest && yarn migration:run && nodemon --exec ts-node ./src/index.ts  ",
+    "start": "yarn test && yarn migration:run && nodemon --exec ts-node ./src/index.ts  ",
     "migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/migrations/default",
     "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run",
     "test": "jest"
