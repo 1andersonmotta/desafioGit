@@ -15,8 +15,8 @@ Visual Studio Code
 ## Uso
 Clone o Projeto no GitHub:
 https://github.com/1andersonmotta/desafioGit.git 
-1. Run command yarn install
-2. Run command for create database postgres: docker-compose up 
+1. Rode o comando yarn install
+2. Com Docker aberto rode o comando: docker-compose up 
 
 
 ## End Points
